@@ -1,119 +1,134 @@
-/* ===== RESET ===== */
-body {
+/* Reset */
+* {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #f4f6ff;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ===== CENTER APP ===== */
+/* Container */
 .container {
-  width: 500px;
-  margin: 60px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  max-width: 500px;
+  width: 90%;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* TITLE */
+/* Title */
 h2 {
   text-align: center;
-  color: #2d3436;
   margin-bottom: 20px;
 }
 
-/* ===== INPUT AREA ===== */
+/* Input box */
 .input-box {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-input {
+/* Input */
+.input-box input {
   flex: 1;
-  padding: 12px;
-  border: 2px solid #eee;
-  border-radius: 10px;
-  outline: none;
-  transition: 0.3s;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-input:focus {
-  border-color: #6c5ce7;
-}
-
-/* ADD BUTTON */
+/* Add button */
 .add-btn {
-  background: #6c5ce7;
-  color: white;
+  padding: 10px 16px;
   border: none;
-  padding: 12px 16px;
-  border-radius: 10px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.add-btn:hover {
-  background: #4b3fd1;
-}
-
-/* ===== TODO LIST ===== */
+/* Todo list */
 ul {
   list-style: none;
-  padding: 0;
 }
 
-/* TODO ITEM */
+/* Todo item */
 li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 14px;
+  padding: 12px;
   margin-bottom: 10px;
-
-  background: #f9f9f9;
-  border-left: 5px solid #6c5ce7;
-  border-radius: 10px;
-
-  transition: 0.2s;
+  background: #f5f5f5;
+  border-radius: 8px;
 }
 
-li:hover {
-  transform: scale(1.02);
-}
-
-/* TEXT */
+/* Text */
 .todo-text {
   cursor: pointer;
-  font-size: 16px;
-  color: #2d3436;
+  flex: 1;
+  word-break: break-word;
 }
 
-/* COMPLETED TASK */
+/* Completed */
 .completed {
   text-decoration: line-through;
-  color: #b2bec3;
+  color: gray;
 }
 
-/* DELETE BUTTON */
+/* Delete button */
 .delete-btn {
-  background: #ff4757;
   border: none;
+  background: red;
   color: white;
   padding: 6px 10px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.delete-btn:hover {
-  background: #d63031;
-}
-
-/* EMPTY STATE */
+/* Empty text */
 .empty {
   text-align: center;
   color: gray;
   margin-top: 20px;
+}
+
+/* 🔥 RESPONSIVE DESIGN */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .container {
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .input-box {
+    flex-direction: column;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 12px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
 }
